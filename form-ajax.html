@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            document.getElementById("search_form").addEventListener("submit", function (event) {
+
+                if (document.getElementById("search_string").value.trim().length == 0) {
+                    document.getElementById("error_msg").innerHTML = "Please enter some non empty search string";
+                    event.preventDefault();
+                } else {
+                    // prepare an ajax call
+                }
+
+            });
+
+        })
+    </script>
+</head>
+<body>
+
+<h1>Form with validation</h1>
+<p>In this example we attach a listener to the submit event of the form. We perform a validation (checking that
+    the search string is not empty). If empty we display an error message and we cancel the submission.</p>
+
+<form id="search_form" method="GET" action="demo.json">
+    Enter some text: <input type="text" id="search_string" name="q" placeholder="Search google"/>
+    <div id="error_msg"></div>
+    <input type="submit" value="Search"/>
+</form>
+</body>
+</html>
