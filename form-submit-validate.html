@@ -6,9 +6,10 @@
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             document.getElementById("search_form").addEventListener("submit", function (event) {
+                const  search_string = document.getElementById("search_string");
                 // this is the validation
-                if (document.getElementById("search_string").value.trim().length == 0) {
-                    document.getElementById("error_msg").innerHTML = "Please enter some non empty search string";
+                if (search_string.value.trim().length == 0) {
+                    search_string.nextElementSibling.innerHTML = "Please enter some non empty search string";
                     //stop the form sending
                     event.preventDefault();
                 }
@@ -24,9 +25,9 @@
 <p>In this example we attach a listener to the submit event of the form. We perform a validation (checking that
     the search string is not empty). If empty we display an error message and we cancel the submission.</p>
 
-<form id="search_form" method="GET" action="https://www.google.com">
+<form id="search_form" method="get" action="https://www.google.com/search">
     Search google: <input type="text" id="search_string" name="q" placeholder="Search google"/>
-    <div id="error_msg"></div>
+    <div style="color:red"></div>
     <input type="submit" value="Search"/>
 </form>
 </body>
