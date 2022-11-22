@@ -12,8 +12,11 @@
                     search_string.nextElementSibling.innerHTML = "Please enter some non empty search string";
                     //stop the form sending
                     event.preventDefault();
+                    // return false; does not work... see next JS lecture (week 6) to understand why
+                } else {
+                    // prepare an ajax call (we will see this later)
                 }
-                // else do what the form is supposed to do
+
             });
 
         })
