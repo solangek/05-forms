@@ -5,14 +5,15 @@
     <title>Title</title>
     <script>
         document.addEventListener("DOMContentLoaded", function() {
+            const  search_string = document.getElementById("search_string");
+
             document.getElementById("search_form").addEventListener("submit", function (event) {
-                const  search_string = document.getElementById("search_string");
                 // this is the validation
                 if (search_string.value.trim().length == 0) {
                     search_string.nextElementSibling.innerHTML = "Please enter some non empty search string";
                     //stop the form sending
                     event.preventDefault();
-                    // return false; does not work... see next JS lecture (week 6) to understand why
+                    // return false; does not work... see next JS lecture (week 6)
                 } else {
                     // prepare an ajax call (we will see this later)
                 }
