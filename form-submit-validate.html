@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
+        document.addEventListener("DOMContentLoaded", () => {
             const  search_string = document.getElementById("search_string");
 
             document.getElementById("search_form").addEventListener("submit", function (event) {
                 // this is the validation
-                if (search_string.value.trim().length == 0) {
+                if (search_string.value.trim().length === 0) {
                     search_string.nextElementSibling.innerHTML = "Please enter some non empty search string";
                     //stop the form sending
                     event.preventDefault();
@@ -25,12 +25,13 @@
 </head>
 <body>
 
-<h1>Form with validation</h1>
+<h1>Form with validation (without bootstrap)</h1>
 <p>In this example we attach a listener to the submit event of the form. We perform a validation (checking that
     the search string is not empty). If empty we display an error message and we cancel the submission.</p>
 
 <form id="search_form" method="get" action="https://www.google.com/search">
-    Search google: <input type="text" id="search_string" name="q" placeholder="Search google"/>
+    <label for="search_string">Search google:</label>
+    <input type="text" id="search_string" name="q" placeholder="Search google" />
     <div style="color:red"></div>
     <input type="submit" value="Search"/>
 </form>
